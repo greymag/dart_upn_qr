@@ -8,9 +8,9 @@ See https://www.zbs-giz.si/placilni-promet/
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Use methods from `UpnQRParser`.
 
 ```dart
-const like = 'sample';
+const data = UpnQRParser.parseString(qrCodeString);
+print('Recipient IBAN: ${data.recipientIban}, amount: ${data.amount}')
 ```

@@ -1,3 +1,3 @@
-## 0.1.0
+## 0.0.1
 
-* TODO: Describe initial release.
+Very first basic version of UPN QR code content.
