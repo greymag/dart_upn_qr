@@ -1,0 +1,9 @@
+name: upn_qr
+description: Working with UPN QR code content (Slovenia).
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0'
+
+dev_dependencies:
+  innim_lint: ^0.4.0
