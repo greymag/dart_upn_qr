@@ -7,5 +7,15 @@
     // Remove from file watching
     "files.watcherExclude": {
       "**/.fvm": true
-    }
+    },
+    "cSpell.words": [
+      "CPYR",
+      "Lepa",
+      "nalog",
+      "plačilni",
+      "strlen",
+      "Šubičeva",
+      "Univerzalni",
+      "UPNQR"
+    ]
 }
