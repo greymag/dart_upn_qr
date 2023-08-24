@@ -53,11 +53,15 @@ class UpnQRParser {
   //
   // The maximum length of the data, including punctuation without reserve, is 411 characters
 
+  static const _maxLen = 411;
+
   /// Parse UPN QR code string data.
   static UpnData parseString(String value) {
-    if (value.length > 411) throw UnpQRParseError.tooLong();
+    if (value.length > _maxLen) throw UnpQRParseError.tooLong();
 
     final lines = value.split('\n');
+    if (lines.length > 21) throw UnpQRParseError.tooManyLines();
+    if (lines.length < 20) throw UnpQRParseError.tooFewLines();
 
     var i = 0;
     if (lines[i++] != 'UPNQR') throw UnpQRParseError.invalidFormat();
@@ -69,7 +73,6 @@ class UpnQRParser {
     final payerName = _parseStr(lines[i++]);
     final payerAddress = _parseStr(lines[i++]);
     final payerCity = _parseStr(lines[i++]);
-    // TESTME: missedAmount
     final amount = _requireStr(lines[i++], UnpQRParseErrorType.missedAmount);
     final paymentDate = _parseStr(lines[i++]);
     final urgent = _parseBool(lines[i++]);
@@ -82,7 +85,16 @@ class UpnQRParser {
     final recipientAddress = _parseStr(lines[i++]);
     final recipientCity = _parseStr(lines[i++]);
 
-    // TODO: check checksum
+    final checkSum = int.tryParse(
+        _requireStr(lines[i++], UnpQRParseErrorType.missedChecksum));
+    if (checkSum == null) throw UnpQRParseError.invalidChecksumFormat();
+
+    final calculatedChecksum =
+        lines.take(19).fold(0, (v, l) => v + l.length + 1);
+
+    if (calculatedChecksum != checkSum) {
+      throw UnpQRParseError.checksumNotMatched();
+    }
 
     return UpnData(
       payerIban: payerIban,
