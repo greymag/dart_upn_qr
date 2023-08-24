@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 part of 'upn_qr_parser_test.dart';
 
 const upnQR_1 = '''
@@ -22,7 +24,7 @@ Gregorčičeva ulica 20
 Ljubljana
 260''';
 
-const upnQR_2 = '''
+const upnQR_NoLeading = '''
 SI56011008881234567
 
 
@@ -40,5 +42,27 @@ SI56011008881000030
 SI1935980621-62006
 RS PREHODNI DAVČNI PODRAČUN
 Gregorčičeva ulica 20
+Ljubljana
+260''';
+
+const upnQR_412_chars = '''
+UPNQR
+SI56011008881234567
+
+
+RF035126080
+ORANGE DOG, RAČUNALNIŠKO PROGRAMIORANGE DOG, RAČUNALNIŠKO PROGRAMI
+BARJANSKA CESTA 70BARJANSKA CESTA 70BARJANSKA CESTA 70BARJANSKA
+1000 Ljubljana
+00000003400
+
+
+VATX
+Plačilo DDV za: 7-7.2023
+31.08.2023
+SI56011008881000030
+SI1935980621-62006
+RS PREHODNI DAVČNI PODRAČUNRS PREHODNI DAVČNI PODRAČUN
+Gregorčičeva ulica 20Gregorčičeva ulica 20Gregorčičeva ulica 20
 Ljubljana
 260''';

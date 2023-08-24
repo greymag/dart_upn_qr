@@ -31,8 +31,15 @@ void main() {
 
       test('should throw invalidFormat error if no leading', () {
         expect(
-          () => UpnQRParser.parseString(upnQR_2),
+          () => UpnQRParser.parseString(upnQR_NoLeading),
           _throwsA(UnpQRParseErrorType.invalidFormat),
+        );
+      });
+
+      test('should throw tooLong error if length in more that 411', () {
+        expect(
+          () => UpnQRParser.parseString(upnQR_412_chars),
+          _throwsA(UnpQRParseErrorType.tooLong),
         );
       });
     });

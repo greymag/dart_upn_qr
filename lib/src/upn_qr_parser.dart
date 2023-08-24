@@ -55,7 +55,7 @@ class UpnQRParser {
 
   /// Parse UPN QR code string data.
   static UpnData parseString(String value) {
-    // TODO: check length
+    if (value.length > 411) throw UnpQRParseError.tooLong();
 
     final lines = value.split('\n');
 

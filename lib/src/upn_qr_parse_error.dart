@@ -5,9 +5,13 @@ class UnpQRParseError extends Error {
 
   factory UnpQRParseError.invalidFormat() =>
       UnpQRParseError(UnpQRParseErrorType.invalidFormat);
+
+  factory UnpQRParseError.tooLong() =>
+      UnpQRParseError(UnpQRParseErrorType.tooLong);
 }
 
 enum UnpQRParseErrorType {
   invalidFormat,
+  tooLong,
   missedAmount,
 }
