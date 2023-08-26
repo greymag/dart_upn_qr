@@ -166,4 +166,26 @@ class UpnData {
     required this.recipientAddress,
     required this.recipientCity,
   });
+
+  @override
+  String toString() => 'UpnData{'
+      'payerIban: $payerIban, '
+      'deposit: $deposit, '
+      'withdrawal: $withdrawal, '
+      'payerReference: $payerReference, '
+      'payerName: $payerName, '
+      'payerAddress: $payerAddress, '
+      'payerCity: $payerCity, '
+      'amount: $amount, '
+      'paymentDate: $paymentDate, '
+      'urgent: $urgent, '
+      'paymentPurposeCode: $paymentPurposeCode, '
+      'paymentPurpose: $paymentPurpose, '
+      'paymentDeadline: $paymentDeadline, '
+      'recipientIban: $recipientIban, '
+      'recipientReference: $recipientReference, '
+      'recipientName: $recipientName, '
+      'recipientAddress: $recipientAddress, '
+      'recipientCity: $recipientCity'
+      '}';
 }
