@@ -1,3 +1,6 @@
+/// Data of UNP (Univerzalni plačilni nalog).
+///
+/// Universal Payment Order for Slovenia.
 class UpnData {
   /// Payer’s IBAN
   ///

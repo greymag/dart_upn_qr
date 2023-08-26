@@ -1,5 +1,6 @@
 import 'package:upn_qr/upn_qr.dart';
 
+/// Parser utils for the UPN QR.
 class UpnQRParser {
   // QR Character Set: ISO 8859-2. The use of Extended Channel Interpretation (ECI value 000004) is required.
   // At the end of each field, from sequence number 1 up to and including 20, add the punctuation LF (0x0A,
