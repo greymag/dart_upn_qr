@@ -1,3 +1,10 @@
+## 0.0.3 
+
+- Added `toString()` for `UpnData`.
+- Some documentation for classes and enums
+- README: added badges.
+- Added example.
+
 ## 0.0.2
 
 Verification and checks.
