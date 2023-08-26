@@ -1,6 +1,6 @@
 name: upn_qr
 description: Working with UPN QR code content (Slovenia).
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/greymag/dart_upn_qr
 issue_tracker: https://github.com/greymag/dart_upn_qr/issues
 
