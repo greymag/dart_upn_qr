@@ -1,7 +1,9 @@
+import 'package:equatable/equatable.dart';
+
 /// Data of UNP (Univerzalni plačilni nalog).
 ///
 /// Universal Payment Order for Slovenia.
-class UpnData {
+class UpnData extends Equatable {
   /// Payer’s IBAN
   ///
   /// SEPA IBAN without spaces.
@@ -149,7 +151,7 @@ class UpnData {
   /// Example: 1000 Ljubljana
   final String? recipientCity;
 
-  UpnData({
+  const UpnData({
     required this.payerIban,
     required this.deposit,
     required this.withdrawal,
@@ -169,6 +171,28 @@ class UpnData {
     required this.recipientAddress,
     required this.recipientCity,
   });
+
+  @override
+  List<Object?> get props => [
+        payerIban,
+        deposit,
+        withdrawal,
+        payerReference,
+        payerName,
+        payerAddress,
+        payerCity,
+        amount,
+        paymentDate,
+        urgent,
+        paymentPurposeCode,
+        paymentPurpose,
+        paymentDeadline,
+        recipientIban,
+        recipientReference,
+        recipientName,
+        recipientAddress,
+        recipientCity,
+      ];
 
   @override
   String toString() => 'UpnData{'
