@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:upn_qr/upn_qr.dart';
 
 void main() {

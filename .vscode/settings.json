@@ -9,13 +9,11 @@
       "**/.fvm": true
     },
     "cSpell.words": [
-      "CPYR",
-      "Lepa",
-      "nalog",
-      "plačilni",
-      "strlen",
-      "Šubičeva",
-      "Univerzalni",
-      "UPNQR"
+      "BARJANSKA",
+    ],
+    "cSpell.ignorePaths": [
+      "example/main.dart",
+      "test/upn_qr_parser_test.data.dart",
+      "test/upn_qr_parser_test.expect.dart",
     ]
 }
