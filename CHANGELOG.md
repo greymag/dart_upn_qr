@@ -1,6 +1,8 @@
+## 0.0.4
+
 - Two `UpnData` object with the same fields values considered as equals.
 
-## 0.0.3 
+## 0.0.3
 
 - Added `toString()` for `UpnData`.
 - Some documentation for classes and enums
