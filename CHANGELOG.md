@@ -1,3 +1,8 @@
+## 0.0.5
+
+- Methods to get dates as `DateTime`.
+- Method to get amount as `int`.
+
 ## 0.0.4
 
 - Two `UpnData` object with the same fields values considered as equals.
