@@ -164,6 +164,42 @@ void main() {
         expect(a == b, false);
       });
     });
+
+    group('getPaymentDate()', () {
+      test('should return correct DateTime if presented', () {
+        final data = createData(paymentDate: '11.07.2016');
+
+        final res = data.getPaymentDate();
+
+        expect(res, DateTime(2016, 7, 11));
+      });
+
+      test('should return correct null if not presented', () {
+        final data = createData(paymentDate: null);
+
+        final res = data.getPaymentDate();
+
+        expect(res, null);
+      });
+    });
+
+    group('getPaymentDeadline()', () {
+      test('should return correct DateTime if presented', () {
+        final data = createData(paymentDeadline: '06.11.2023');
+
+        final res = data.getPaymentDeadline();
+
+        expect(res, DateTime(2023, 11, 6));
+      });
+
+      test('should return correct null if not presented', () {
+        final data = createData(paymentDeadline: null);
+
+        final res = data.getPaymentDeadline();
+
+        expect(res, null);
+      });
+    });
   });
 }
 

@@ -172,6 +172,25 @@ class UpnData extends Equatable {
     required this.recipientCity,
   });
 
+  DateTime? getPaymentDate() => _convertDateTime(paymentDate);
+
+  DateTime? getPaymentDeadline() => _convertDateTime(paymentDeadline);
+
+  DateTime? _convertDateTime(String? value) {
+    if (value == null) return null;
+
+    final parts = value.split('.');
+    if (parts.length != 3) {
+      throw ArgumentError.value(value, 'value', 'Invalid value format');
+    }
+
+    final day = parts[0];
+    final month = parts[1];
+    final year = parts[2];
+
+    return DateTime(int.parse(year), int.parse(month), int.parse(day));
+  }
+
   @override
   List<Object?> get props => [
         payerIban,
