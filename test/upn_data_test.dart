@@ -1,4 +1,5 @@
 import 'package:test/test.dart';
+import 'package:tuple/tuple.dart';
 import 'package:upn_qr/upn_qr.dart';
 
 void main() {
@@ -174,7 +175,7 @@ void main() {
         expect(res, DateTime(2016, 7, 11));
       });
 
-      test('should return correct null if not presented', () {
+      test('should return null if not presented', () {
         final data = createData(paymentDate: null);
 
         final res = data.getPaymentDate();
@@ -192,12 +193,46 @@ void main() {
         expect(res, DateTime(2023, 11, 6));
       });
 
-      test('should return correct null if not presented', () {
+      test('should return null if not presented', () {
         final data = createData(paymentDeadline: null);
 
         final res = data.getPaymentDeadline();
 
         expect(res, null);
+      });
+    });
+
+    group('getPaymentDeadline()', () {
+      const [
+        Tuple2('00000126874', 126874),
+        Tuple2('00000018500', 18500),
+        Tuple2('00000003396', 3396),
+      ].forEach((e) {
+        final amount = e.item1;
+        final expected = e.item2;
+        test('should return correct value for <$amount>', () {
+          final data = createData(amount: amount);
+
+          final res = data.getAmount();
+
+          expect(res, expected);
+        });
+      });
+
+      test('should return 0 if value is 0', () {
+        final data = createData(amount: '00000000000');
+
+        final res = data.getAmount();
+
+        expect(res, 0);
+      });
+
+      test('should return 0 if value is empty', () {
+        final data = createData(amount: '');
+
+        final res = data.getAmount();
+
+        expect(res, 0);
       });
     });
   });

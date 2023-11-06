@@ -172,6 +172,8 @@ class UpnData extends Equatable {
     required this.recipientCity,
   });
 
+  int getAmount() => amount.isNotEmpty ? int.parse(amount) : 0;
+
   DateTime? getPaymentDate() => _convertDateTime(paymentDate);
 
   DateTime? getPaymentDeadline() => _convertDateTime(paymentDeadline);
